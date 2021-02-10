@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+cd /var/html/www/wordpress
+echo "1234" > test_
+

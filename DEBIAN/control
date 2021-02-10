@@ -1,0 +1,8 @@
+Package: ft-server
+Version: 1.0
+Provides: ftserver
+Maintainer: Aracely Tawana
+Architecture: amd64
+Section: contrib
+Description: short description
+Depends: nginx, php, mariadb-server, php-mysql 
