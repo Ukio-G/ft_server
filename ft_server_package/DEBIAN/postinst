@@ -3,6 +3,8 @@
 cd /var/www/html && tar -xvf wordpress.tar.gz
 unzip phpmyadmin.zip
 
+# Create socket directory (why postinstall php doesn't do that?!)
+mkdir -p /run/php
 
-service php7.3-fpm restart
 service nginx restart
+service php7.3-fpm restart
