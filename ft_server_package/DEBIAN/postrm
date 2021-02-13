@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -rf /var/www/html/wordpress
+rm -rf /var/www/html/phpMyAdmin-5.0.4-all-languages

@@ -1,5 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 
-cd /var/www/html
-tar -xvf wordpress.tar.gz
+cd /var/www/html && tar -xvf wordpress.tar.gz
 unzip phpmyadmin.zip
