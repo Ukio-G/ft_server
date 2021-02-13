@@ -7,7 +7,7 @@ unzip phpmyadmin.zip
 mkdir -p /run/php
 
 # Add mysqli extenstion to php
-sed 's/;extension=mysqli/extension=mysqli/g'
+sed -i 's/;extension=mysqli/extension=mysqli/g' "/etc/php/7.3/fpm/php.ini"
 
 #!/bin/bash
 service nginx restart
