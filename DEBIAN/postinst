@@ -1,5 +1,5 @@
 #!/usr/bin/sh
 
-cd /var/html/www/wordpress
-echo "1234" > test_
-
+cd /var/www/html
+tar -xvf wordpress.tar.gz
+unzip phpmyadmin.zip
