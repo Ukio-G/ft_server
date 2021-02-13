@@ -6,5 +6,11 @@ unzip phpmyadmin.zip
 # Create socket directory (why postinstall php doesn't do that?!)
 mkdir -p /run/php
 
+# Add mysqli extenstion to php
+sed 's/;extension=mysqli/extension=mysqli/g'
+
+#!/bin/bash
 service nginx restart
 service php7.3-fpm restart
+service mysql restart
+mysql -u root -e "SET PASSWORD FOR root@'localhost' = PASSWORD('SecretPassword123');"
