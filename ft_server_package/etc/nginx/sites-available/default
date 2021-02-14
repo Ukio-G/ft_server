@@ -47,12 +47,15 @@ server {
 	location / {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
-		try_files $uri $uri/ =404;
-		root   html;
+		include /etc/nginx/mime.types;
+		fastcgi_split_path_info ^(.+\.php)(/.+)$; #this line
+		root   /var/www/html;
 		index  index.php index.html index.htm;
 	}
 
 	location ~ \.php$ {
+		fastcgi_split_path_info ^(.+\.php)(/.+)$; #this line
+		include /etc/nginx/mime.types;
 		include snippets/fastcgi-php.conf;
 		fastcgi_pass unix:/run/php/php7.3-fpm.sock;
 		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
