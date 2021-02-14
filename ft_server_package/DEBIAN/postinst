@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /var/www/html && tar -xvf wordpress.tar.gz
+cd /var/www/html && tar -xvf wordpress_complete.tar.gz
 unzip phpmyadmin.zip -d phpmyadmin
 
 # Create socket directory (why postinstall php doesn't do that?!)
@@ -12,6 +12,7 @@ sed -i 's/;extension=mysqli/extension=mysqli/g' "/etc/php/7.3/fpm/php.ini"
 service nginx restart
 service php7.3-fpm restart
 service mysql restart
+mysql -uroot -pSecretPassword123 --execute "`cat /var/www/html/wordpress.sql`"
 mysql -u root -e "SET PASSWORD FOR root@'localhost' = PASSWORD('SecretPassword123');"
 mv /var/www/html/config.inc.php /var/www/html/phpmyadmin
 mv /var/www/html/phpmyadmin/phpMyAdmin-5.0.4-all-languages/* /var/www/html/phpmyadmin/
