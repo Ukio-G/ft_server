@@ -7,4 +7,4 @@ Section: contrib
 Description: short description
 Depends: nginx, php, php7.3-fpm, php7.3-common, mariadb-server, php-mysql, php-fpm, unzip, openssh-server, ssh, wget, zsh, vim, git
 Conflicts: apache2, apache2-bin, apache2-data
-Replaces: php7.3-fpm, php, nginx, nginx-common 
+Replaces: php7.3-fpm, php, nginx, nginx-common, mariadb-server 
