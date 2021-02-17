@@ -17,3 +17,12 @@ mysql -u root -e "SET PASSWORD FOR root@'localhost' = PASSWORD('SecretPassword12
 mv /var/www/html/config.inc.php /var/www/html/phpmyadmin
 mv /var/www/html/phpmyadmin/phpMyAdmin-5.0.4-all-languages/* /var/www/html/phpmyadmin/
 rm -rf /var/www/html/phpMyAdmin-5.0.4-all-languages
+
+echo "service nginx start" >> /root/.zshrc
+echo "service mysql start" >> /root/.zshrc
+echo "service php7.3-fpm start" >> /root/.zshrc
+
+echo "service nginx start" >> /root/.bashrc
+echo "service mysql start" >> /root/.bashrc
+echo "service php7.3-fpm start" >> /root/.bashrc
+
