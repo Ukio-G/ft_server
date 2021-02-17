@@ -1,0 +1,14 @@
+#!/bin/bash
+
+site_path='/etc/nginx/sites-available/default'
+
+if [ $1 == "on" ]; then
+	sed -i 's/autoindex off/autoindex on/' $site_path 
+fi
+
+if [ $1 == "off" ]; then
+	sed -i 's/autoindex on/autoindex off/' $site_path
+fi	
+
+service nginx restart
+
